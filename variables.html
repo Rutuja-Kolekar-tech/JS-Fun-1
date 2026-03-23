@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+//var function scoped , can redeclare , reassign , not block scoped 
+
+     function test(){
+        var a =100;
+        console.log('a variable :',a);
+     }
+
+     test();
+
+
+     if(true){
+        var r ="Rutuja";
+        console.log('r ',r);
+     }
+
+     console.log(r);
+
+
+     console.log(h);
+      var h="hoisted"  //hoisted and initialized
+
+//let  block scoped , can not redeclare , but can reassign , hoisted and tdz temporat dead zone (the tie between hoistng and intialized);
+
+
+function test2(){
+    let name="riya";
+    console.log("riya",name);
+}
+
+test2();
+
+           if(true){
+              let s ="hii";
+              console.log('s var',s);
+           }
+
+
+    //   console.log(h2);
+    //   let h2="hoisted"
+
+//const also block scoped but can not redeclare cannot re assign
+
+
+
+
+
+let a = 1;
+
+function demo(){
+    let a = 2;
+    console.log(a);
+
+}
+
+demo();
+
+
+
+    </script>
+    
+</body>
+</html>
