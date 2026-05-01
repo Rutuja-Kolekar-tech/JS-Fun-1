@@ -9,17 +9,29 @@
     <script>
 
 
-console.log('start');
+// console.log('start');
 
-setTimeout(()=>{
-    console.log('setTimeout Callback!!!')
-},4000);
+// setTimeout(()=>{
+//     console.log('setTimeout Callback!!!')
+// },4000);
 
-Promise.resolve().then(()=>{
-    console.log('Prmise Callback');
-})
+// Promise.resolve().then(()=>{
+//     console.log('Prmise Callback');
+// })
 
-console.log('end')
+// console.log('end')
+
+
+
+function f1(){
+    console.log('f1');
+}
+
+function f2(){
+    f1();
+    console.log("f2");
+}
+f2();
 
     </script>
 </body>
