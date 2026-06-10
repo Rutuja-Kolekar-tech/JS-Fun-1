@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilaa js</title>
+</head>
+<body>
+    
+<h1>Counter : <span id="counter">0</span></h1>
+<button id="increment">Increment</button>
+<button id="decrement">Decrement</button>
+<button id="reset">Reset</button>
+
+    <script>
+      
+      let count =0;
+      const countSpan = document.getElementById('counter');
+      const incrementBtn = document.getElementById('increment');
+      const decrementBtn =document.getElementById('decrement');
+      const resetBtn=document.getElementById('reset');
+
+    incrementBtn.addEventListener('click',(e)=>{
+        count++;
+        countSpan.textContent = count;
+    })
+    decrementBtn.addEventListener('click',(event)=>{
+        count--;
+        countSpan.textContent = count;
+    })
+    resetBtn.addEventListener('click',(e)=>{
+        count=0;
+        countSpan.textContent = count;
+    })
+    </script>
+</body>
+</html>
