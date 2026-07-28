@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Person {
+            constructor(name){
+                this._name=name;
+            }
+            get firstname(){
+               return this._name;
+            }
+            set firstname(newname){
+                if(newname){
+                    this._name=newname;
+                }
+                else{
+                    console.log('name can not be empty');
+                }
+            }
+        }
+
+        const person = new  Person("Ruu");
+        console.log(person.firstname)
+
+        person.firstname="ish";
+        console.log(person.firstname);
+
+    </script>
+</body>
+</html>
