@@ -1,8 +1,39 @@
 #ClickBtn{
-    
     color:blue;
     padding:10px;
     background-color:lightblue;
     border:none;
     border-radius:5px;
 }
+#website-title{
+
+    color:blue;
+    text-align:center;
+    background-color:lightblue;
+}
+
+#main-navigation a{
+    text-decoration:none;
+    color:black;
+}
+#main-navigation ul {
+    display:flex;
+    list-style:none;
+    gap:30px;
+    justify-content:flex-end;
+    padding:0;
+}
+.services{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+}
+.blog{
+    border:1px solid black;
+    height:300px;
+    width:300px;
+}
+#main-footer{
+    text-align:center;
+}
+
