@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User List</h1>
+
+    <div id="formDiv">
+    <form action="post" id="userForm">
+    <input type="number" name="Id" id="fId" placeholder="Enter your Id"/>
+    <input type="text" name="name" id="fName" placeholder="Enter your name"/>
+    <input type="number" name="age" id="fAge" placeholder="Enter your age"/>
+    <input type="email" name="email" id="fEmail" placeholder="Enter your email"/>
+    <input type="button" name="submit" id="btn" value="Submit"/>
+    </form>
+    </div>
+    <br/>
+  
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody class="userList">
+
+        </tbody>
+    </table>
+
+
+
+</body>
+<script>
+
+let fId= document.getElementById("fId");
+let fName= document.getElementById("fName");
+let fAge= document.getElementById("fAge");
+let fEmail= document.getElementById("fEmail");
+let btn= document.getElementById("btn");
+
+    let userlist = document.getElementsByClassName("userList")[0];
+    let users=[];
+
+btn.addEventListener("click",function(){
+    let newUser ={
+    id:fId.value,
+    name:fName.value,
+    age:fAge.value,
+    email:fEmail.value
+}
+
+ users.push(newUser);
+ displayUsers();
+
+})
+
+function displayUsers(){
+    userlist.innerHTML="";
+  users.forEach(function(user){
+    userlist.innerHTML+=`
+    <tr>
+        <th>${user.id}</th>
+        <th>${user.name}</th>
+        <th>${user.age}</th>
+        <th>${user.email}</th>
+    `
+  })
+
+}
+</script>
+</html>

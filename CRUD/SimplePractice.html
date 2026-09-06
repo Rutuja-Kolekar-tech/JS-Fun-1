@@ -8,6 +8,9 @@
 <body>
 
     <h1 id="title">Welcome</h1>
+     <input type="text" id="name" placeholder="Enter your name">
+     <input type="button" id="btn" value="Submit">
+
     
 </body>
 <script>
@@ -44,6 +47,15 @@ let title= document.getElementById("title");
 console.log(title.innerHTML);
 title.innerHTML="hello";
 console.log(title.innerHTML);
+
+
+
+let name = document.getElementById("name");
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click",function(){
+    console.log(name.value);
+})
 
 </script>
 </html>
