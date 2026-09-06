@@ -6,6 +6,8 @@
     <title>CRUD Practice</title>
 </head>
 <body>
+
+    <h1 id="title">Welcome</h1>
     
 </body>
 <script>
@@ -36,6 +38,12 @@ user.forEach(function(key,value){
     console.log(key,value);
 })
 
+
+
+let title= document.getElementById("title");
+console.log(title.innerHTML);
+title.innerHTML="hello";
+console.log(title.innerHTML);
 
 </script>
 </html>
