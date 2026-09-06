@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: red;">
+    
+    <p id="text"> Welcome</p>
+
+    <input type="button" id="btn" value="submit"/>
+    <input type="button" id="colorChangeBtn" value="Submit"/>
+
+    <script>
+
+        let text = document.getElementById('text');
+        let btn =document.getElementById('btn');
+        let colorChangeBtn =document.getElementById('colorChangeBtn');
+
+        btn.addEventListener("click", function(){
+            if(text.style.display=="none"){
+                text.style.display="block";
+            }
+            else{
+                text.style.display="none";
+            }
+        })
+
+        colorChangeBtn.addEventListener("click",function(){
+            if(document.body.style.backgroundColor=="red"){
+                document.body.style.backgroundColor="blue";
+            }else{
+                document.body.style.backgroundColor="red";
+            }
+        })
+
+    </script>
+</body>
+</html>
