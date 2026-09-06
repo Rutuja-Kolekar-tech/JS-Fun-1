@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: pink;
+}
+#title{
+    text-align:center;
+    color:blue;
+}
+#mainContent{
+    display:flex;
+    justify-content:center;
+    justify-content: space-evenly;
+}
+#mainFooter{
+    text-align:center;
+    color:blue;
+}
+#formDiv,#tableDiv{
+    padding:20px;
+    margin:50px;
+}
+#formDiv input{
+    display:block;
+    margin:10px;
+    padding:10px;
+
+}
+#formDiv{
+    background-color: aqua;
+}
+#tableDiv{
+    background-color: aqua;
+}
+#sBtn{
+    padding:10px;
+    margin:10px;
+    border:none;
+    border-radius:5px;
+    background-color:rgb(39, 165, 238);
+    cursor: pointer;
+}
+
+#tableDiv table{
+    border:1px solid black;
+    border-collapse:collapse;
+}
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+    <link rel="stylesheet" href="crudPractice.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <h2 id="title">CRUD Application</h2>
+    </header>
+    <main id="mainContent">
+        <div id="formDiv">
+                <form action="post" id="userForm">
+                     <input type="number" name="ID" id="fId" placeholder="Enter Id"/>
+                     <input type="text" name="name" id="fName" placeholder="Enter Name"/>
+                     <input type="number" name="age" id="fAge" placeholder="Enter Age"/>
+                     <input type="email" name="email" id="fEmail" placeholder="Enter Email"/>
+                     <input type="button" name="Submit" id="sBtn" value="Submit"/>
+                </form>
+        </div>
+        <div id="tableDiv">
+              <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>  
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="userList">
+
+                </tbody>
+              </table>
+        </div>
+    </main>
+    <footer id="mainFooter">
+        Thank You
+    </footer>
+
+<script src="crudPractice.js"></script>
+</body>
+</html>

@@ -26,6 +26,7 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody class="userList">
@@ -37,6 +38,7 @@
 
 </body>
 <script>
+let editId=null;
 
 let fId= document.getElementById("fId");
 let fName= document.getElementById("fName");
@@ -49,9 +51,9 @@ let btn= document.getElementById("btn");
 
 btn.addEventListener("click",function(){
     let newUser ={
-    id:fId.value,
+    id:Number(fId.value),
     name:fName.value,
-    age:fAge.value,
+    age:Number(fAge.value),
     email:fEmail.value
 }
 
@@ -59,6 +61,24 @@ btn.addEventListener("click",function(){
  displayUsers();
 
 })
+
+const deleteUser =(id)=>{
+    users=users.filter(function(user){
+        return user.id!=id;
+    })
+    displayUsers();
+}
+const editUser =(id)=>{
+   let user = users.find(function(user){
+    return user.id==editId;
+   })
+
+   editId=id;
+   fId.value=user.id;
+   fName.value=user.name;
+   fAge.value=user.age;
+   fEmail.value=user.email;
+}
 
 function displayUsers(){
     userlist.innerHTML="";
@@ -69,8 +89,16 @@ function displayUsers(){
         <th>${user.name}</th>
         <th>${user.age}</th>
         <th>${user.email}</th>
+        <th>
+            <input type="button" value="Delete" onClick="deleteUser(${user.id})"/>
+            <input type="button" value="Edit" onClick="editUser(${user.id})"/>
+            </th>
+        
+    </tr>
+
     `
   })
+
 
 }
 </script>
