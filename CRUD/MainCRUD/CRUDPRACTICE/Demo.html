@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <main>
+        <div>
+<form id="createForm">
+    <label>ID</label>
+    <input type="number" name="ID" id="fId" placeholder="Enter Id" required/>
+    <small id="idError"></small>
+    <label>Name</label>
+    <input type="text" name="name" id="fName" placeholder="Enter Name" required/>
+    <label for="">Mobile</label>
+    <input type="number" name="mobile" id="fMobile" placeholder="Enter Mobile Number" required/>
+    <small id="mobileError" style="color: red;"> </small>
+    <label>Email</label>
+    <input type="email" name="email" id="fEmail" placeholder="Enter Email" required/>
+    <label>Description</label>
+    <textarea type="text" name="description" id="fDes" placeholder="Enter Description" required></textarea>
+    <input type="submit"  value="Add" name="addBtn"/>
+</form>
+        </div>
+        <div>
+<table border="1">
+   <thead>
+     <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile No.</th>
+        <th>Email</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+   </thead>
+   <tbody id="userList">
+
+   </tbody>
+    
+</table>
+        </div>
+    </main>
+    <script>
+        let createForm = document.getElementById('createForm');
+        let fId = document.getElementById('fId');
+        let fName = document.getElementById('fName');
+        let fMobile = document.getElementById('fMobile');
+        let fEmail = document.getElementById('fEmail');
+        let fDes = document.getElementById('fDes');
+        let mobileError = document.getElementById('mobileError');
+        let idError = document.getElementById('idError');
+
+        let users=[];
+
+        let userList = document.getElementById('userList');
+
+        createForm.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let exists = users.find(function(user){
+                return user.id==fId.value;
+            })
+            if(exists){
+                idError.innerHTML='Id already exists!';
+                return;
+            }
+            if(fMobile.value.length!=10){
+                mobileError.innerHTML="Please enter only 10 digits"
+                return;
+            }
+            else{
+                mobileError.innerHTML="";
+            }
+
+
+            let newUser ={
+                id:fId.value,
+                name:fName.value,
+                mobile:fMobile.value,
+                email:fEmail.value,
+                des:fDes.value
+            }
+
+            users.push(newUser);
+            createForm.reset();
+            displayUser();
+
+        })
+
+        const deleteUser =(id) =>{
+            users=users.filter(function(user){
+                return user.id!=id;
+            })
+            displayUser();
+        }
+
+        const displayUser =()=>{
+
+            userList.innerHTML="";
+            users.forEach(function(user){
+            userList.innerHTML+=`
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.mobile}</td>
+                <td>${user.email}</td>
+                <td>${user.des}</td>
+                <td><input type="button" name="button" id="dBtn" value="Delete" onClick="deleteUser(${user.id})"/>
+                </tr>
+            `
+            })
+        }
+
+    </script>
+</body>
+</html>

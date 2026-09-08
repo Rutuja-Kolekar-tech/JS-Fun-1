@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <style>
+        .mainContent{
+            margin: auto; 
+        }
+        #userTable table{
+            border-collapse:collapse ; 
+            margin-top: 10px;
+        }
+        th,td{
+             padding: 10px;
+        }
+        th{
+           background-color: rgba(11, 134, 216, 0.616);
+        }
+        input { 
+           padding: 10px;
+        }
+        #addBtn{
+          background-color: rgba(11, 134, 216, 0.616);
+          border: none;
+          cursor: pointer;
+        }
+        #logOutBtn{
+            text-align:right;
+        }
+        
+    </style>
+</head>
+<body>
+   <header>
+    <h2 style="text-align: center;">User List </h2>
+    <input type="button" value="Logout" id="logOutBtn"/>
+   </header>
+   <main class="mainContent">
+
+        <div  id="createForm">
+            <form id="createList">
+            <input type="number" name="ID" id="fId" placeholder="Enter Id "/>
+            <input type="text" name="name" id="fName" placeholder="Enter Name"/>
+            <input type="number" name="age" id="fAge" placeholder="Enter Age"/>
+            <input type="email" name="email" id="fEmail" placeholder="Enter Email"/>
+            <input type="submit" name="Add" value="Add" id="addBtn"/>
+        </form>
+        </div>
+        <div id="userTable">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="userlist">
+
+                </tbody>
+            </table>
+
+        </div>
+   </main>
+<script src="userList.js"></script>
+</body>
+</html>

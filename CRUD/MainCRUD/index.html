@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crudApplication</title>
+    <style>
+             
+               body{
+                margin: 0;
+                padding: 0;
+                background-color: rgba(11, 134, 216, 0.616);
+               }
+
+              #createFormDiv{
+                background-color: white;
+                border: 1px solid black;
+                height: 400px;
+                width: 400px;
+                margin: auto;
+                margin-top: 150px;
+                border-radius: 10px;
+                padding:30px;
+                box-sizing: border-box;
+              }
+              #createUserForm{
+                padding: 10px;
+                margin: 10px;
+              }
+              #createUserForm label{
+                display: block;
+                text-align: left;
+                font-weight: 500;
+                font-size: large;
+               }
+               #createUserForm input[type="text"],
+               #createUserForm input[type="password"]
+               {
+                padding: 10px;
+                width: 100%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+               }
+             #heading{
+                text-align: center;
+             }
+             #loginBtn{
+                display: block;
+                margin-top: 10px;
+                margin: 20px auto;
+                padding: 15px;
+                width: 150px;
+                box-sizing: border-box;
+                border: none;
+                background-color: rgba(11, 134, 216, 0.616);
+                font-size: larger;
+                cursor: pointer;
+             }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="createFormDiv">
+                  <h1 id="heading">Sign In</h1>
+                 <form  id="createUserForm">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="fName" placeholder="Enter Username"/>
+                   <p style="color: red; display: block;" id="fnameError"></p>
+                  
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="pass" placeholder="Enter Password"/>
+                  <p style="color: red; display: block;" id="passError"></p>
+
+
+                  <input type="submit" value="Login" id="loginBtn"/>
+            </form>
+        </div>
+    </main>
+    <script>
+        let createUserForm = document.getElementById('createUserForm');
+           let fName = document.getElementById('fName');
+           let pass = document.getElementById('pass');
+           let fnameError = document.getElementById('fnameError');
+           let passError = document.getElementById('passError');
+
+           let loginBtn = document.getElementById('loginBtn');
+
+           createUserForm.addEventListener("submit",function(e){
+            
+            e.preventDefault();
+            if(fName.value.trim()==""){
+                fnameError.innerHTML="Please Enter Username"
+            }
+            else if(pass.value.trim()==""){
+                passError.innerHTML="Please Enter Password"
+            }
+            else{
+                let loginData = {
+                    username:fName.value,
+                    password:pass.value
+                }
+                localStorage.setItem("loginData", JSON.stringify(loginData));
+                alert("login succesfull!")
+                window.location.href="userList.html"
+            }
+           })
+    </script>
+</body>
+</html>
